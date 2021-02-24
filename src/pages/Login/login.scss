@@ -1,0 +1,35 @@
+.loginWarp{
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .login{
+    width: 430px;
+    height: 461px;
+    background-color: #fff;
+    position: relative;
+    top: 34%;
+    left: 57%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .title, .userName, .passWorld, .button{
+      width: 350px;
+      height: 45px;
+    }
+    .title{
+      border-bottom: 1px solid #BFC5CA;
+      font-size: 20px;
+      color: #48A0CF;
+      text-align: left;
+      line-height: 50px;
+    }
+    .userName{
+
+    }
+    .button{
+      font-size: 17px;
+    }
+  }
+}

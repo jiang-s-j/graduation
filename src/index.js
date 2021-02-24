@@ -4,10 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Index from './pages/Index/index.jsx'
+import Login from './pages/Login/login.jsx'
+import './index.css'
+import { HashRouter,Route,Switch,Redirect } from 'react-router-dom'
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <HashRouter>
+    <Switch> 
+      <Route to='/login' exact component={Login}></Route>
+      <Route to='/' exact component={Index}></Route>
+    </Switch>
+  </HashRouter>,
   document.getElementById('root')
 );
 
