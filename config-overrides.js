@@ -1,4 +1,4 @@
-const { override, fixBabelImports } = require('customize-cra');
+const { override, fixBabelImports,addWebpackAlias } = require('customize-cra');
 
 const path = require('path');
 function resolve(dir) {

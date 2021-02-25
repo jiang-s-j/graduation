@@ -3,19 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux'
 
-import Index from './pages/Index/index.jsx'
-import Login from './pages/Login/login.jsx'
+import Index from '@/pages/Index/index.jsx'
+import Login from '@/pages/Login/login.jsx'
 import './index.css'
 import { HashRouter,Route,Switch,Redirect } from 'react-router-dom'
+import store from '@/store/index'
 
 ReactDOM.render(
-  <HashRouter>
-    <Switch> 
-      <Route to='/login' exact component={Login}></Route>
-      <Route to='/' exact component={Index}></Route>
-    </Switch>
-  </HashRouter>,
+  <Provider store={store}>
+    <HashRouter>
+        <Switch> 
+          <Route to='/login' exact component={Login}></Route>
+          <Route to='/' exact component={Index}></Route>
+        </Switch>
+    </HashRouter>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 
