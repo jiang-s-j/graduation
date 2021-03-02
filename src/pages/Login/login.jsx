@@ -1,20 +1,25 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 import './login.scss'
 import login from '../../asset/imgs/login.png'
 
-import { Input,Button,Form,Checkbox } from 'antd';
-import { UserOutlined,SafetyCertificateOutlined } from '@ant-design/icons';
+import { Input, Button, Form, Checkbox } from 'antd';
+import { UserOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
 
-class Login extends Component{
-  constructor(props){
+class Login extends Component {
+  constructor(props) {
     super(props)
     this.state = {
 
     }
   }
+  onFinish = () => {
 
-  componentDidMount(){
-    
+  }
+
+  onFinishFailed = () => {}
+
+  componentDidMount() {
+
   }
 
   render() {
@@ -22,29 +27,45 @@ class Login extends Component{
     // 请求必应背景图片
     return (
       <>
-        <div className='loginWarp' style={{backgroundImage:`url(${url})`}}>
+        <div className='loginWarp' style={{ backgroundImage: `url(${url})` }}>
           <div className="login">
             <div className='title'>
               登录
             </div>
             <Form
-             initialValues={{ remember: false }}
+             
+              name="basic"
+              initialValues={{ remember: true }}
+              onFinish={this.onFinish}
+              onFinishFailed={this.onFinishFailed}
             >
-              <Form.Item>
-                <Input className='userName' size="large" placeholder="用户名" name="username" prefix={<UserOutlined />} />
+              <Form.Item
+                label="Username"
+                name="username"
+                rules={[{ required: true, message: 'Please input your username!' }]}
+              >
+                <Input />
               </Form.Item>
-              <Form.Item>
-                <Input className='passWorld' size="large" placeholder="密码" name='password' prefix={<SafetyCertificateOutlined />} />
+
+              <Form.Item
+                label="Password"
+                name="password"
+                rules={[{ required: true, message: 'Please input your password!' }]}
+              >
+                <Input.Password />
               </Form.Item>
-              <Form.Item>
-                <Checkbox name='remember' valuePropName="checked">Remember me</Checkbox>
+
+              <Form.Item  name="remember" valuePropName="checked">
+                <Checkbox>Remember me</Checkbox>
               </Form.Item>
+
               <Form.Item>
-                <Button className='button' type="primary" htmlType='submit'>登录</Button>
+                <Button type="primary" htmlType="submit">
+                  Submit
+                </Button>
               </Form.Item>
             </Form>
-            
-            
+
           </div>
         </div>
       </>

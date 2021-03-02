@@ -1,0 +1,136 @@
+学生毕业设计（论文）原创性声明      
+
+本人以信誉声明：所呈交的毕业设计（论文）是在导师的指导下进行的设计（研究）工作及取得的成果，设计（论文）中引用他（她）人的文献、数据、图件、资料均已明确标注出，论文中的结论和结果为本人独立完成，不包含他人成果及为获得重庆工程学院或其它教育机构的学位或证书而使用其材料。与我一同工作的同志对本设计（研究）所做的任何贡献均已在论文中作了明确的说明并表示了谢意。                                       
+
+
+
+毕业设计（论文）作者（签字）：            
+      年     月    日
+
+
+
+
+
+
+
+
+
+
+
+摘  要
+
+  目前国内外的购物网站数不胜数，模式主要有：B2C、C2C这两种模式，国外的购物网站例如eBay，亚马逊等等都是相当出色的购物网站，为人们的购物提供了方便；近几年随着国内大量的互联网公司的强势崛起，在很多方面已经处于全球领先的地位，纵观国内外的购物网站，大多数网站目前局限于线上查看商品和购买商品，以致于假货和劣质品在一些网站大行其道，使得消费者的权益无辜受到损害。
+应该有一个网站对这些商品进行测评，但是测评内容如果过于专业对于广大的普通消费者来说，不亚于噩耗，而且大多数普通用户也不会花费大量时间来看这些专业测评，所以我们网站应该让一些专业测评人员已视频的方式来呈现内容，并且视频内容应该具有趣味性，就比如B站上的知识分享区内容，同时兼具趣味性与知识性。让广大的普通用户在看视频娱乐中顺便把专业性较强的测评内容看完。给广大的普通用户在购买商品是避免买到假货，以及质量与价格严重不符的商品。让商家好的商品被大众熟知，让广大消费者买到好物。
+本论文主要是围绕好物测评网站为开发主题，本项目为前后端分离的项目，前端运用HTML进行页面的布局，使用CSS对网页进行美化，使用JavaScript对网页实现交互效果，网站还是使用React框架进行敏捷开发，使用React-Router来管理URL，实现组件的切换和状态的变化，使用Redux提供可预测化的状态管理，使用Axios进行网络请求，后端主要运用PHP和ThinkPHP框架进行开发。
+  关键词：好物测评；React;PHP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abstract
+
+ There are many shopping websites in China,There are mainly two modes: B2C and C2C. Foreign shopping websites such as eBay and Amazon are excellent shopping websites, which provide convenience for people's shopping. In recent years, with the strong rise of a large number of domestic Internet companies, they have been in the leading position in the world in many aspects. Looking at the shopping websites at home and abroad, most of them are limited to online shopping Check goods and buy goods, so that fake goods and inferior goods are popular in some websites, making the rights and interests of consumers innocent damage.
+There should be a website to evaluate these products, but if the evaluation content is too professional, it is no less than bad news for the majority of ordinary consumers, and most ordinary users will not spend a lot of time to see these professional evaluation, so our website should let some professional evaluation personnel present the content by video, and the video content should be interesting For example, the content of knowledge sharing area on station B is both interesting and knowledgeable. Let the majority of ordinary users watch video entertainment in the way of professional evaluation content. To the majority of ordinary users in the purchase of goods is to avoid buying fake, as well as the quality and price of goods seriously inconsistent. Let the business good commodity be known by the public, let the broad masses of consumers buy good things.
+This paper mainly focuses on the development theme of Haowu evaluation website. This project is a front-end separation project. The front-end uses HTML to layout the page, uses CSS to beautify the page, and uses JavaScript to achieve interactive effects on the page. The website still uses react framework for agile development, uses react router to manage the URL, realizes the switching of components and the change of state, and uses Redux provides predictable state management, uses Axios for network requests, and the back end mainly uses php and ThinkPHP framework for development.
+Key words: Evaluation;React;PHP
+
+
+
+
+
+
+目    录
+
+摘要	I
+Abstract	I
+1 概述	3
+1.1本课题的目的及意义	3
+1.2 国内外研究现状和趋势	4
+1.3 本章小结	5
+2 前端开发环境及相关技术	6
+2.1 前端开发环境	6
+2.2 前端开发工具	7
+2.3 HTML5前端开发相关技术	8
+2.3.1JavaScript简介	8
+2.3.2JavaScript基本特点	8
+2.3.3 css简介	9
+2.3.4 React框架 简介	10
+2.4 本章小结	11
+3 系统需求分析	12
+3.1 系统总体框架	12
+3.1.1 系统的功能模块	12
+3.1.2 系统的流程图	12
+4 前后端设计	15
+4.1 数据库设计	15
+4.1.1数据库设计概念	15
+4.1.2数据库表设计	15
+4.1.3部分后台系统模块流程图	19
+4.2网站结构布局与设计	20
+4.2.1网站的首页结构	20
+4.2.2明确主题	21
+4.3网站前端页面设计	21
+4.3.1 首页	21
+4.3.2 子页面	22
+4.4本章小结	23
+5 网站主要功能的实现与测试	24
+5.1 首页的界面规划设计	24
+5.2 主要内容与功能设计	24
+5.3 前端的展示	25
+5.3.1 首页展示	25
+5.3.2 网站风格设计	26
+5.3.3 网站的子页面链接	26
+5.4 可视化设计	26
+5.5 具体的技术	27
+5.5.1 CSS3的应用	27
+5.5.2 JavaScript的网页设计	27
+5.5.3 ThinkPHP	27
+5.6网站测试	28
+5.6.1代码测试	28
+5.6.2性能测试	29
+5.6.3网站分析	29
+5.7 本章小结	30
+6 结    论	31
+参考文献	32
+致谢	33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 概述
+
+1.1本课题的目的及意义
+现在网上购物已经非常普遍了，你可以购买你想购买的任何物品，在购物网站搜索同类产品可以说是数不胜数，但是这也产生了一个问题，你该选购那个产品？单纯的看价格？看品牌？看一些自己根本不懂的参数？
+而且有这样一群人，他们可能刚毕业不久，或许收入还不是很高，挤着公交地铁，消费不起昂贵的商品，但对生活品质却有不低的要求，会中意一些略贵但质量不错的东西。 
+网站的目标是让视频创作者来通过自己的专业技术或者自己的亲生经历来分享自己对某种商品的评价，让广大的普通用户在选购产品时避免被无良商家坑骗，让更多好物不会因为没知名度而不被消费者所熟知，让用户买到物美价廉的商品！实现消费者与商家的共赢。
+本课题的意义主要再以探索消费者以商家以及第三方评测机构的关系以及互相的影响，以及探索测评机构对商家带来的是正反馈还是负反馈，假如测评机构的影响力达到一定的程度，让大众看到一个产品的产业链，让大众来深入浅出一个产业链，从大致上了解一个商品的属性及其效果，从而让广大的消费者有能力去在数不胜数的产品中进行一个大致的模糊性的选择，而到广大消费者能进行一个初步性的大致性的判断时，一些质量好性价比极高的产品变会在众多的同类产品中脱颖而出，让真正的质量好价格便宜的产品能够真正的呈现在广大的消费者的面前，从而实现消费者与商家与第三方的测评者或测评机构实现多方共赢，也正是因为测评网站对商品的一个测评视频能让广大消费者进行一个在认知上的升级和认识，能够让一些在市场上进行鱼目混珠的商家，制假售假或者通过消费者的认知不足来销售质量残次品的商家，在测评网站的测评的下显出商品的本质，让广大的消费者不在选择这些残次品，这样测品机构就能倒逼商品的产业链进行升级。让真正的质量好价格便宜的商品做到家喻户晓人竟皆知，让一些质量不好性价比极低的产品臭名远扬，直至被迫退出市场。从而实现商家与消费者与测评三方的循序让三者不断促进彼此的发展，让三方不断地正反馈，实现三方的长期的有益的良性发展。
+1.2国内外研究现状和趋势
+	1.国内现状研究
+	
+
