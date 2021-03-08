@@ -14,10 +14,9 @@ import store from '@/store/index'
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter>
-        <Switch> 
-          <Route to='/login' exact component={Login}></Route>
-          <Route to='/' exact component={Index}></Route>
-        </Switch>
+          <Route  path={'/index'} component={Index}></Route>
+          <Route exact path={'/login'} component={Login}></Route>
+          <Redirect from='/' to='/index/recommend'></Redirect>
     </HashRouter>
   </Provider>
   ,

@@ -33,34 +33,37 @@ class Login extends Component {
               登录
             </div>
             <Form
-             
               name="basic"
               initialValues={{ remember: true }}
               onFinish={this.onFinish}
               onFinishFailed={this.onFinishFailed}
+              
             >
               <Form.Item
-                label="Username"
+                // label="Username"
                 name="username"
+                className='userName'
                 rules={[{ required: true, message: 'Please input your username!' }]}
               >
-                <Input />
+                <Input prefix={<UserOutlined/>} />
               </Form.Item>
 
               <Form.Item
-                label="Password"
+                // label="Password"
                 name="password"
+                className='passWorld'
                 rules={[{ required: true, message: 'Please input your password!' }]}
               >
-                <Input.Password />
+                <Input.Password prefix={<SafetyCertificateOutlined/>} />
               </Form.Item>
 
               <Form.Item  name="remember" valuePropName="checked">
                 <Checkbox>Remember me</Checkbox>
               </Form.Item>
 
-              <Form.Item>
-                <Button type="primary" htmlType="submit">
+              <Form.Item
+              >
+                <Button className='button' type="primary" htmlType="submit" >
                   Submit
                 </Button>
               </Form.Item>

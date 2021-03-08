@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux'
 import * as Actions from './contans'
+import IndexReducer from '@/pages/Index/store/renducer'
+
 
 // store 默认值
 const defaultValue = {
@@ -18,7 +20,8 @@ const mainReducer = (state = defaultValue, action) => {
 
 // 可以加载多个reducer
 const reducer = combineReducers({
-  main: mainReducer
+  index: IndexReducer,
+  main: mainReducer,
 })
 
 export default reducer
