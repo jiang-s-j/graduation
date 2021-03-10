@@ -1,5 +1,6 @@
 import Require from '@/utils/axios'
 
+// 获取必应背景图
 // export const getBackgroundImg = () => {
 //   return Require({
 //     url: '/api/HPImageArchive.aspx',
@@ -11,3 +12,18 @@ import Require from '@/utils/axios'
 //     }
 //   })
 // }
+
+export const testapi = () => {
+  return Require({
+    url: '/mock/test',
+    method: 'get',
+  })
+}
+
+export const getRecommend = () => {
+  return Require({
+    url: '/mock/recommend/mockData',
+    method: 'psot',
+    data: {},
+  })
+}

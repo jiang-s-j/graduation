@@ -5,9 +5,12 @@ module.exports = function (app) {
     createProxyMiddleware({
       target:'http://cn.bing.com',
       changeOrigin:true,
-      pathRewrite: {
-        "^/api" : "",
-    }
+    })
+  )
+  app.use("/mock",
+    createProxyMiddleware({
+      target: 'http://127.0.0.1:9000',
+      changeOrigin:true,
     })
   )
 }

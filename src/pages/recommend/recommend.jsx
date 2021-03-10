@@ -1,5 +1,16 @@
 import React,{Component} from 'react'
 import './recommend.scss'
+import { connect } from 'react-redux'
+
+import * as ACTCreator  from '@/store/actionCreates.js'
+
+@connect(
+  (state) => ({}),
+  dispatch => ({
+    initRecommend:() =>  {dispatch({type: 'initRecommendSaga',load:''})}
+  })
+)
+
 
 class Recommend extends Component{
   constructor(props){
@@ -7,6 +18,10 @@ class Recommend extends Component{
     this.state= {
 
     }
+  }
+
+  componentDidMount () {
+    this.props.initRecommend()
   }
 
   render(){

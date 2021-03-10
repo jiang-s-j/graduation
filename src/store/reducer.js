@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import * as Actions from './contans'
 import IndexReducer from '@/pages/Index/store/renducer'
+import RecommendReducer from '@/pages/recommend/store/renducer'
 
 
 // store 默认值
@@ -22,6 +23,7 @@ const mainReducer = (state = defaultValue, action) => {
 const reducer = combineReducers({
   index: IndexReducer,
   main: mainReducer,
+  recommend:RecommendReducer,
 })
 
 export default reducer

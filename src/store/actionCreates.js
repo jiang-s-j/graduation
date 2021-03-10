@@ -6,3 +6,10 @@ export const testActionCreate = (load) =>{
     load,
   }
 }
+
+export const initRecommendAction = (load) => {
+  return {
+    type: Act.INITRECOMMEND,
+    load
+  }
+}
