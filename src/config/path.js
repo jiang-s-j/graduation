@@ -1,3 +1,5 @@
-export const Path = {
-  
+const Path = {
+  baseUrl : '/mock'
 }
+
+export default Path

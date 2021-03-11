@@ -1,29 +1,23 @@
 import Require from '@/utils/axios'
+import Path from '@/config/path.js'
 
-// 获取必应背景图
-// export const getBackgroundImg = () => {
-//   return Require({
-//     url: '/api/HPImageArchive.aspx',
-//     method:'post',
-//     data:{
-//       format:'js',
-//       idx: '0',
-//       n: '1',
-//     }
-//   })
-// }
 
-export const testapi = () => {
-  return Require({
-    url: '/mock/test',
-    method: 'get',
-  })
-}
 
+// 推荐模快初始化
 export const getRecommend = () => {
   return Require({
-    url: '/mock/recommend/mockData',
-    method: 'psot',
-    data: {},
+    url: `/${Path.baseUrl}/getInitRecommend`,
+    method: 'post',
   })
 }
+
+// 登录接口
+export const loginIndex = (data) => {
+  return Require({
+    url:'/index/login',
+    method: 'post',
+    data,
+  })
+}
+
+

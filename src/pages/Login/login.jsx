@@ -5,6 +5,8 @@ import login from '../../asset/imgs/login.png'
 import { Input, Button, Form, Checkbox } from 'antd';
 import { UserOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
 
+import { loginIndex } from '@/api/index'
+
 class Login extends Component {
   constructor(props) {
     super(props)
@@ -12,8 +14,14 @@ class Login extends Component {
 
     }
   }
-  onFinish = () => {
-
+  onFinish = (value) => {
+    loginIndex({
+      username:value.username,
+      password:value.password,
+      remember:value.remember}
+      ).then((res) => {
+        console.log(res);
+      }).catch( )
   }
 
   onFinishFailed = () => {}
