@@ -6,7 +6,7 @@ import Path from '@/config/path.js'
 // 推荐模快初始化
 export const getRecommend = () => {
   return Require({
-    url: `/${Path.baseUrl}/getInitRecommend`,
+    url: `${Path.baseUrl}/getInitRecommend`,
     method: 'post',
   })
 }

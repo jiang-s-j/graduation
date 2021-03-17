@@ -17,7 +17,7 @@ Require.interceptors.request.use( config => {
 
 Require.interceptors.response.use(
   respose => {
-    if(respose.code == 200){
+    if(respose.status == 200){
       return respose.data
     }else{
       return Promise.reject(respose)

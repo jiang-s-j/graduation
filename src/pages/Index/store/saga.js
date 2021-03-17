@@ -8,7 +8,7 @@ function * testAsync () {
 
 
 function * IndexSage() {
-  yield takeEvery(Acts.TESTINDEX,testAsync)
+  
 }
 
 export default IndexSage

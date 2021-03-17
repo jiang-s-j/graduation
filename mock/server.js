@@ -15,8 +15,8 @@ app.post("/mock/getInitRecommend",async function (req,res){
     "flag" : true,
     "code": 200,
     "desc" : null,
-    "data|20-40": [{
-      "img": '',
+    "data|5-10": [{
+      "img|0-6": 0,
       "name": "@cname",
       "descript|20-50":"@cname"
     }]
