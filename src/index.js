@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 
 import Index from '@/pages/Index/index.jsx'
 import Login from '@/pages/Login/login.jsx'
+import NotFound from '@/pages/notFound/notFound.jsx'
 import './index.css'
 import { HashRouter,Route,Switch,Redirect } from 'react-router-dom'
 import store from '@/store/index'
@@ -16,7 +17,10 @@ ReactDOM.render(
     <HashRouter>
           <Route  path={'/index'} component={Index}></Route>
           <Route exact path={'/login'} component={Login}></Route>
-          <Redirect from='/' to='/index/recommend'></Redirect>
+          <Route exact path={'/404'}>
+            <NotFound></NotFound>
+          </Route>
+          <Redirect from='/' to='/404'></Redirect>
     </HashRouter>
   </Provider>
   ,
