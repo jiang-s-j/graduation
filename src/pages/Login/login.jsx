@@ -20,11 +20,15 @@ class Login extends Component {
       password:value.password,
       remember:value.remember}
       ).then((res) => {
-        console.log(res);
+        if (res.flag) {
+          
+        }
       }).catch( )
   }
 
-  onFinishFailed = () => {}
+  onFinishFailed = () => {
+
+  }
 
   componentDidMount() {
 
@@ -51,7 +55,9 @@ class Login extends Component {
                 // label="Username"
                 name="username"
                 className='userName'
-                rules={[{ required: true, message: 'Please input your username!' }]}
+                rules={[
+                  { required: true, message: 'Please input your username!' },
+                ]}
               >
                 <Input prefix={<UserOutlined/>} />
               </Form.Item>
@@ -60,7 +66,9 @@ class Login extends Component {
                 // label="Password"
                 name="password"
                 className='passWorld'
-                rules={[{ required: true, message: 'Please input your password!' }]}
+                rules={[
+                  { required: true, message: 'Please input your password!' },
+                ]}
               >
                 <Input.Password prefix={<SafetyCertificateOutlined/>} />
               </Form.Item>

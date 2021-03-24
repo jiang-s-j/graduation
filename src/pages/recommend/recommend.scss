@@ -1,6 +1,9 @@
 .recommend{
   width: 100%;
   margin: 2vh 0vw;
+  height: 75vh;
+  overflow: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

@@ -10,6 +10,11 @@ module.exports = override(
      libraryName: 'antd-mobile',
      style: 'css',
    }),
+  //  fixBabelImports('import', {
+  //       libraryName: 'antd',
+  //        libraryDirectory: 'es',
+  //       style: 'css',
+  //   }),
    addWebpackAlias({
    '@': resolve("src")
   }),

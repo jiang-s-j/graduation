@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,createRef } from 'react'
 import './recommend.scss'
 import { connect } from 'react-redux'
 
@@ -6,6 +6,7 @@ import * as ACTCreator from '@/store/actionCreates.js'
 
 import { getRecommend } from '@/api/index'
 import { Skeleton, Card, Avatar } from 'antd'
+import { Button} from 'antd-mobile'
 import { EditOutlined, EllipsisOutlined, SettingOutlined, HeartOutlined } from '@ant-design/icons';
 
 
@@ -32,6 +33,9 @@ import recom7 from '@/asset/imgs/recom7.jpg'
 class Recommend extends Component {
   constructor(props) {
     super(props)
+
+    this.scrollDom = createRef() // 为scroll 设置ref
+
     this.state = {
       recommendInitData: [], // 推荐初始化数据
       imgs: [recom1, recom2, recom3, recom4, recom5, recom6, recom7], // 图片数组
@@ -45,21 +49,27 @@ class Recommend extends Component {
   componentDidMount() {
     console.log('加载');
     // this.props.initRecommend()
+    this.fetchRecommendData()
+
+  }
+
+  // 请求推荐数据
+  fetchRecommendData = () => {
     getRecommend().then(
       res => {
         console.log(res);
         if (res.flag) {
-          this.setState({
-            recommendInitData: res.data,
+          this.setState( (pre) =>  ({
+            recommendInitData: pre.recommendInitData.concat(res.data) ,
             isSkeletonFlag: false
-          })
+          }))
+
           this.getMultArry()
 
           console.log(this.state.arry2);
         }
       }
     )
-
   }
 
   componentWillUnmount() {
@@ -89,6 +99,15 @@ class Recommend extends Component {
 
   }
 
+  handleScoll = (e) => {
+    if(this.scrollDom.current.scrollTop+this.scrollDom.current.clientHeight >= this.scrollDom.current.scrollHeight ){
+      console.log('到底了');
+      //  到scroll 滑到底部时 进行请求数据
+      this.fetchRecommendData()
+
+    }
+  }
+
   render() {
     const {
       recommendInitData,
@@ -104,10 +123,15 @@ class Recommend extends Component {
             <Skeleton active paragraph={{ rows: 5 }}></Skeleton>
             <Skeleton active paragraph={{ rows: 5 }}></Skeleton>
           </div>
+          
         }
         {
           !isSkeletonFlag &&
-          <div className='recommend'>
+          <div 
+            className='recommend' 
+            onScroll={this.handleScoll}
+            ref={this.scrollDom}
+            >
             <div className="arryList">
               {this.state.arry1.map((item, index) => (
                 <Card
@@ -196,8 +220,8 @@ class Recommend extends Component {
               }
 
             </div>
-
-
+            
+              
 
           </div>
 
