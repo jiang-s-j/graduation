@@ -12,11 +12,15 @@ import List from '@/components/ListView/listView.jsx'
 import './index.css'
 import { HashRouter,Route,Switch,Redirect } from 'react-router-dom'
 import store from '@/store/index'
+import PrivateRoute from '@/components/privateRoute/privateRoute.jsx'
 
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter>
-          <Route  path={'/index'} component={Index}></Route>
+          <PrivateRoute path={'/index'}>
+            <Index></Index>
+          </PrivateRoute>
+          {/* <Route  path={'/index'} component={Index}></Route> */}
           <Route exact path={'/login'} component={Login}></Route>
           <Route exact path={'/404'}>
             <NotFound></NotFound>

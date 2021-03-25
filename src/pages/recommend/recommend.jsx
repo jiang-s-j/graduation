@@ -6,7 +6,6 @@ import * as ACTCreator from '@/store/actionCreates.js'
 
 import { getRecommend } from '@/api/index'
 import { Skeleton, Card, Avatar } from 'antd'
-import { Button} from 'antd-mobile'
 import { EditOutlined, EllipsisOutlined, SettingOutlined, HeartOutlined } from '@ant-design/icons';
 
 
