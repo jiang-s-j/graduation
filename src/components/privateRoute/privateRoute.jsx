@@ -3,14 +3,13 @@ import { Route, Redirect, useHistory,withRouter} from 'react-router-dom'
 
 const PrivateRoute = withRouter( (props) => {
 
-  const [auth,setAuth] = useState('')
+  const [auth,setAuth] = useState(true)
 
   // let history = useHistory()
 
   useEffect(() => {
-    let auth = localStorage.getItem('token')
-    console.log(auth);
-    if(auth){
+    let token = localStorage.getItem('token')
+    if(token){
       setAuth(true)
     }else{
       setAuth(false)
@@ -21,8 +20,11 @@ const PrivateRoute = withRouter( (props) => {
     <>
        {auth &&
         <Route path={props.path}>
-          {props.children}
+          {props.children} 
         </Route> 
+        }
+        {!auth &&
+          <Redirect to='/login'></Redirect>
         }
     </> 
   )

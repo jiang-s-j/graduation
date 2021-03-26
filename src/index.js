@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import Index from '@/pages/Index/index.jsx'
 import Login from '@/pages/Login/login.jsx'
 import NotFound from '@/pages/notFound/notFound.jsx'
-import List from '@/components/ListView/listView.jsx'
+import Profile from '@/pages/profile/profile.jsx'
 import './index.css'
 import { HashRouter,Route,Switch,Redirect } from 'react-router-dom'
 import store from '@/store/index'
@@ -17,6 +17,7 @@ import PrivateRoute from '@/components/privateRoute/privateRoute.jsx'
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter>
+        <Switch>
           <PrivateRoute path={'/index'}>
             <Index></Index>
           </PrivateRoute>
@@ -25,10 +26,11 @@ ReactDOM.render(
           <Route exact path={'/404'}>
             <NotFound></NotFound>
           </Route>
-          <Route exact path={'/list'}>
-            <List></List>
+          <Route exact path={'/profile'}>
+            <Profile></Profile>
           </Route>
           {/* <Redirect from='/' to='/404'></Redirect> */}
+          </Switch>
     </HashRouter>
   </Provider>
   ,

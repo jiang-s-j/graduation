@@ -1,4 +1,4 @@
-import React, { Component,createRef } from 'react'
+import React, { Component, createRef } from 'react'
 import './recommend.scss'
 import { connect } from 'react-redux'
 
@@ -58,8 +58,8 @@ class Recommend extends Component {
       res => {
         console.log(res);
         if (res.flag) {
-          this.setState( (pre) =>  ({
-            recommendInitData: pre.recommendInitData.concat(res.data) ,
+          this.setState((pre) => ({
+            recommendInitData: pre.recommendInitData.concat(res.data),
             isSkeletonFlag: false
           }))
 
@@ -99,7 +99,7 @@ class Recommend extends Component {
   }
 
   handleScoll = (e) => {
-    if(this.scrollDom.current.scrollTop+this.scrollDom.current.clientHeight >= this.scrollDom.current.scrollHeight ){
+    if (this.scrollDom.current.scrollTop + this.scrollDom.current.clientHeight >= this.scrollDom.current.scrollHeight) {
       console.log('到底了');
       //  到scroll 滑到底部时 进行请求数据
       this.fetchRecommendData()
@@ -117,26 +117,43 @@ class Recommend extends Component {
         {
           isSkeletonFlag &&
           <div>
-            <Skeleton active paragraph={{ rows: 5 }}></Skeleton>
+            {/* <Card
+              style={{ width: 300,height: 300, marginTop: 16 }}
+              actions={[
+                <SettingOutlined key="setting" />,
+                <EditOutlined key="edit" />,
+                <EllipsisOutlined key="ellipsis" />,
+              ]}
+            >
+              <Skeleton  avatar active>
+                <Card.Meta
+                  avatar={
+                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                  }
+                  title="Card title"
+                  description="This is the description"
+                />
+              </Skeleton>
+            </Card> */}
             <Skeleton active paragraph={{ rows: 5 }}></Skeleton>
             <Skeleton active paragraph={{ rows: 5 }}></Skeleton>
             <Skeleton active paragraph={{ rows: 5 }}></Skeleton>
           </div>
-          
+
         }
         {
           !isSkeletonFlag &&
-          <div 
-            className='recommend' 
+          <div
+            className='recommend'
             onScroll={this.handleScoll}
             ref={this.scrollDom}
-            >
+          >
             <div className="arryList">
               {this.state.arry1.map((item, index) => (
                 <Card
                   hoverable
                   key={index}
-                  style={{ width: 300,marginBottom: '2vh', }}
+                  style={{ width: 300, marginBottom: '2vh', }}
                   cover={
                     <img
                       alt="example"
@@ -144,7 +161,7 @@ class Recommend extends Component {
                     />
                   }
                   actions={[
-                    <HeartOutlined key='like'/>,
+                    <HeartOutlined key='like' />,
                     <EditOutlined key="edit" />,
                     <EllipsisOutlined key="ellipsis" />,
                   ]}
@@ -163,9 +180,9 @@ class Recommend extends Component {
             <div className="arryList">
               {this.state.arry2.map((item, index) => (
                 <Card
-                  hoverable 
-                  key = {index}
-                  style={{ width: 300,marginBottom: '2vh', }}
+                  hoverable
+                  key={index}
+                  style={{ width: 300, marginBottom: '2vh', }}
                   cover={
                     <img
                       alt="example"
@@ -173,7 +190,7 @@ class Recommend extends Component {
                     />
                   }
                   actions={[
-                    <HeartOutlined key='like'/>,
+                    <HeartOutlined key='like' />,
                     <EditOutlined key="edit" />,
                     <EllipsisOutlined key="ellipsis" />,
                   ]}
@@ -191,11 +208,11 @@ class Recommend extends Component {
             </div>
             <div className="arryList">
               {this.state.arry3.map((item, index) => (
-                
+
                 <Card
                   hoverable
                   key={index}
-                  style={{ width: 300,marginBottom: '2vh', }}
+                  style={{ width: 300, marginBottom: '2vh', }}
                   cover={
                     <img
                       alt="example"
@@ -203,7 +220,7 @@ class Recommend extends Component {
                     />
                   }
                   actions={[
-                    <HeartOutlined key='like'/>,
+                    <HeartOutlined key='like' />,
                     <EditOutlined key="edit" />,
                     <EllipsisOutlined key="ellipsis" />,
                   ]}
@@ -219,8 +236,8 @@ class Recommend extends Component {
               }
 
             </div>
-            
-              
+
+
 
           </div>
 

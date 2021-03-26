@@ -29,7 +29,7 @@ export const logoutIndex = (data) => {
     data,
   })
 }
-
+// 注册接口
 export const registerIndex = (data) => {
   return Require({
     url: '/index/register',
@@ -37,5 +37,15 @@ export const registerIndex = (data) => {
     data,
   })
 }
+// 上传文件接口
+export const uploadIndex = (data) => {
+  return Require({
+    url:'/index/upload',
+    method: 'post',
+    data,
+  })
+}
+
+
 
 

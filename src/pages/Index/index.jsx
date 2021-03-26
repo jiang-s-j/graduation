@@ -52,7 +52,9 @@ class Index extends Component{
                 </div>
                 
               </div>
-              <div className="contain-right"></div>
+              <div className="contain-right">
+                
+              </div>
             </div>
         </div>
       </>
