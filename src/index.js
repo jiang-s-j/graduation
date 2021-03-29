@@ -9,6 +9,7 @@ import Index from '@/pages/Index/index.jsx'
 import Login from '@/pages/Login/login.jsx'
 import NotFound from '@/pages/notFound/notFound.jsx'
 import Profile from '@/pages/profile/profile.jsx'
+import PersonalCenter from '@/pages/personalCenter/personalCenter.jsx'
 import './index.css'
 import { HashRouter,Route,Switch,Redirect } from 'react-router-dom'
 import store from '@/store/index'
@@ -21,12 +22,15 @@ ReactDOM.render(
           <PrivateRoute path={'/index'}>
             <Index></Index>
           </PrivateRoute>
+          <Route exact path={'/personal'}>
+            <PersonalCenter></PersonalCenter>
+          </Route>
           {/* <Route  path={'/index'} component={Index}></Route> */}
           <Route exact path={'/login'} component={Login}></Route>
           <Route exact path={'/404'}>
             <NotFound></NotFound>
           </Route>
-          <Route exact path={'/profile'}>
+          <Route exact path={'/profile'}> 
             <Profile></Profile>
           </Route>
           {/* <Redirect from='/' to='/404'></Redirect> */}

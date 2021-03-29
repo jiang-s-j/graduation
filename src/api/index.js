@@ -46,6 +46,15 @@ export const uploadIndex = (data) => {
   })
 }
 
+// 上传视频存入数据库
+export const postVideo = (data) => {
+  return Require({
+    url:'/index/postVideo',
+    method: 'post',
+    data
+  })
+}
+
 
 
 
