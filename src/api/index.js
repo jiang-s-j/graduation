@@ -55,6 +55,24 @@ export const postVideo = (data) => {
   })
 }
 
+// 获取热门视频
+export const pushHot = (data) => {
+  return Require({
+    url: '/index/pushHot',
+    method: 'post',
+    data,
+  })
+}
+
+// 获取关注视频
+export const pushConcern = (data) => {
+  return Require({
+    url: '/index/pushConcern',
+    method: 'post',
+    data,
+  })
+}
+
 
 
 

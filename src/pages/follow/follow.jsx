@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import * as ACTCreator from '@/store/actionCreates.js'
 
-import { getRecommend } from '@/api/index'
+import { getRecommend, pushConcern} from '@/api/index'
 import { Skeleton, Card, Avatar } from 'antd'
 import { EditOutlined, EllipsisOutlined, SettingOutlined, HeartOutlined } from '@ant-design/icons';
 
@@ -54,7 +54,7 @@ class Follow extends Component {
 
   // 请求推荐数据
   fetchRecommendData = () => {
-    getRecommend().then(
+    pushConcern().then(
       res => {
         console.log(res);
         if (res.flag) {
@@ -140,7 +140,7 @@ class Follow extends Component {
                   cover={
                     <img
                       alt="example"
-                      src={this.state.imgs[item.img]}
+                      src={item.img}
                     />
                   }
                   actions={[
@@ -152,7 +152,7 @@ class Follow extends Component {
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                     title={item.name}
-                    description="This is the description"
+                    description={item.descript}
                   />
                 </Card>
 
@@ -169,7 +169,7 @@ class Follow extends Component {
                   cover={
                     <img
                       alt="example"
-                      src={this.state.imgs[item.img]}
+                      src={item.img}
                     />
                   }
                   actions={[
@@ -180,8 +180,8 @@ class Follow extends Component {
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                    title="Card title"
-                    description="This is the description"
+                    title={item.name}
+                    description={item.descript}
                   />
                 </Card>
 
@@ -199,7 +199,7 @@ class Follow extends Component {
                   cover={
                     <img
                       alt="example"
-                      src={this.state.imgs[item.img]}
+                      src={item.img}
                     />
                   }
                   actions={[
@@ -210,8 +210,8 @@ class Follow extends Component {
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                    title="Card title"
-                    description="This is the description"
+                    title={item.name}
+                    description={item.descript}
                   />
                 </Card>
 
@@ -222,6 +222,7 @@ class Follow extends Component {
 
         }
       </>
+      
     )
   }
 }

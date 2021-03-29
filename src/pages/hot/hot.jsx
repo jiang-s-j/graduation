@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import * as ACTCreator  from '@/store/actionCreates.js'
 
-import { getRecommend } from '@/api/index'
+import { getRecommend, pushHot } from '@/api/index'
 import { Skeleton, Card, Avatar } from 'antd'
 import { EditOutlined, EllipsisOutlined, SettingOutlined, HeartOutlined } from '@ant-design/icons';
 
@@ -42,6 +42,8 @@ class Hot extends Component {
       arry1: [],
       arry2: [],
       arry3: [],
+      page: 0,
+      pageSize: 9,
     }
   }
 
@@ -54,7 +56,11 @@ class Hot extends Component {
 
   // 请求推荐数据
   fetchRecommendData = () => {
-    getRecommend().then(
+    console.log(this.state.page);
+    pushHot({
+      page: this.state.page,
+      pageSize: this.state.pageSize
+    }).then(
       res => {
         console.log(res);
         if (res.flag) {
@@ -102,7 +108,12 @@ class Hot extends Component {
     if(this.scrollDom.current.scrollTop+this.scrollDom.current.clientHeight >= this.scrollDom.current.scrollHeight ){
       console.log('到底了');
       //  到scroll 滑到底部时 进行请求数据
-      this.fetchRecommendData()
+      this.setState(pre => ({
+        page: pre.page + 1,
+      }), () => {
+        this.fetchRecommendData()
+      })
+     
 
     }
   }
@@ -140,7 +151,7 @@ class Hot extends Component {
                   cover={
                     <img
                       alt="example"
-                      src={this.state.imgs[item.img]}
+                      src={item.img}
                     />
                   }
                   actions={[
@@ -152,7 +163,7 @@ class Hot extends Component {
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                     title={item.name}
-                    description="This is the description"
+                    description={item.descript}
                   />
                 </Card>
 
@@ -169,7 +180,7 @@ class Hot extends Component {
                   cover={
                     <img
                       alt="example"
-                      src={this.state.imgs[item.img]}
+                      src={item.img}
                     />
                   }
                   actions={[
@@ -180,8 +191,8 @@ class Hot extends Component {
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                    title="Card title"
-                    description="This is the description"
+                    title={item.name}
+                    description={item.descript}
                   />
                 </Card>
 
@@ -199,7 +210,7 @@ class Hot extends Component {
                   cover={
                     <img
                       alt="example"
-                      src={this.state.imgs[item.img]}
+                      src={item.img}
                     />
                   }
                   actions={[
@@ -210,8 +221,8 @@ class Hot extends Component {
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                    title="Card title"
-                    description="This is the description"
+                    title={item.name}
+                    description={item.descript}
                   />
                 </Card>
 
