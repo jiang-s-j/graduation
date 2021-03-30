@@ -6,7 +6,7 @@ import * as ACTCreator  from '@/store/actionCreates.js'
 
 import { getRecommend, pushHot } from '@/api/index'
 import { Skeleton, Card, Avatar } from 'antd'
-import { EditOutlined, EllipsisOutlined, SettingOutlined, HeartOutlined } from '@ant-design/icons';
+import { EditOutlined, EllipsisOutlined, HeartOutlined,PlusCircleOutlined } from '@ant-design/icons';
 
 
 // 引入图片
@@ -103,7 +103,7 @@ class Hot extends Component {
     })
 
   }
-
+  // 滑动事件
   handleScoll = (e) => {
     if(this.scrollDom.current.scrollTop+this.scrollDom.current.clientHeight >= this.scrollDom.current.scrollHeight ){
       console.log('到底了');
@@ -116,6 +116,11 @@ class Hot extends Component {
      
 
     }
+  }
+  // 点击tab事件
+  handelTab = (e) => {
+    console.log(e.currentTarget.getAttribute('data-contentid'));
+
   }
 
   render() {
@@ -133,7 +138,6 @@ class Hot extends Component {
             <Skeleton active paragraph={{ rows: 5 }}></Skeleton>
             <Skeleton active paragraph={{ rows: 5 }}></Skeleton>
           </div>
-          
         }
         {
           !isSkeletonFlag &&
@@ -154,11 +158,6 @@ class Hot extends Component {
                       src={item.img}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like'/>,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -183,11 +182,6 @@ class Hot extends Component {
                       src={item.img}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like'/>,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -213,11 +207,6 @@ class Hot extends Component {
                       src={item.img}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like'/>,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}

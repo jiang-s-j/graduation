@@ -118,13 +118,13 @@ class Recommend extends Component {
           isSkeletonFlag &&
           <div>
             {/* <Card
-              style={{ width: 300,height: 300, marginTop: 16 }}
+              style={{ width: 300,height:, marginTop: 16 }}
               actions={[
                 <SettingOutlined key="setting" />,
                 <EditOutlined key="edit" />,
                 <EllipsisOutlined key="ellipsis" />,
               ]}
-            >
+            > 300
               <Skeleton  avatar active>
                 <Card.Meta
                   avatar={
@@ -160,11 +160,7 @@ class Recommend extends Component {
                       src={this.state.imgs[item.img]}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like' />,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
+                
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -189,11 +185,7 @@ class Recommend extends Component {
                       src={this.state.imgs[item.img]}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like' />,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
+        
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -219,11 +211,7 @@ class Recommend extends Component {
                       src={this.state.imgs[item.img]}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like' />,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
+                
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}

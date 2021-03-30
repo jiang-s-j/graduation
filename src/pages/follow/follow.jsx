@@ -143,11 +143,7 @@ class Follow extends Component {
                       src={item.img}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like'/>,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
+               
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -172,11 +168,7 @@ class Follow extends Component {
                       src={item.img}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like'/>,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
+                
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -202,11 +194,7 @@ class Follow extends Component {
                       src={item.img}
                     />
                   }
-                  actions={[
-                    <HeartOutlined key='like'/>,
-                    <EditOutlined key="edit" />,
-                    <EllipsisOutlined key="ellipsis" />,
-                  ]}
+                
                 >
                   <Card.Meta
                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -222,6 +210,7 @@ class Follow extends Component {
 
         }
       </>
+      
       
     )
   }
