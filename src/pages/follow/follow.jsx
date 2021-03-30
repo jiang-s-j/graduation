@@ -57,15 +57,19 @@ class Follow extends Component {
     pushConcern().then(
       res => {
         console.log(res);
+        // 将返回的二维数组变成一维数组
+        let oneDimensionalArry = []
+        res.data.map((item,index) => {
+          item.map((item1,index1) => {
+            oneDimensionalArry.push(item1)
+          })
+        })
         if (res.flag) {
           this.setState( (pre) =>  ({
-            recommendInitData: pre.recommendInitData.concat(res.data) ,
+            recommendInitData: pre.recommendInitData.concat(oneDimensionalArry) ,
             isSkeletonFlag: false
           }))
-
           this.getMultArry()
-
-          console.log(this.state.arry2);
         }
       }
     )
@@ -77,7 +81,7 @@ class Follow extends Component {
   // 将初始化的数组分成三份
   getMultArry = () => {
     const { recommendInitData } = this.state
-
+    console.log(recommendInitData);
     let arry1 = recommendInitData.filter((item, index) => {
       return index % 3 === 0
     })
@@ -89,6 +93,7 @@ class Follow extends Component {
     let arry3 = recommendInitData.filter((item, index) => {
       return index % 3 === 2
     })
+    console.log(arry1);
 
     this.setState({
       arry1: arry1,
