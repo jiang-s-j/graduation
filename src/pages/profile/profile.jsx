@@ -84,7 +84,7 @@ class Profile extends Component {
           type="inner"
           title="上传视频"
         >
-          <Form {...layout} onFinish={this.postVideo} style={{ backgroundColor: 'white', padding: '40px 0px',}}>
+          <Form {...layout} onFinish={this.postVideo} style={{ backgroundColor: 'white', padding: '40px 0px', }}>
             <Form.Item
               name='title'
               label="标题"
@@ -115,7 +115,7 @@ class Profile extends Component {
               rules={[
                 {
                   required: true,
-                  message: '请输入视频封面'
+                  message: '请上传视频封面'
                 }
               ]}
             >
@@ -123,6 +123,24 @@ class Profile extends Component {
                 name='img'
                 action='http://127.0.0.1:8000/index/upload'
                 onChange={this.fileChange}
+                maxCount={1}
+              >
+                <Button icon={<UploadOutlined />}>Click to Upload</Button>
+              </Upload>
+            </Form.Item>
+            <Form.Item
+              name='video'
+              label='视频'
+              rules={
+                [{
+                  required: true,
+                  message: '请上传视频'
+                }]
+              }
+            >
+              <Upload
+                name='videoContent'
+                action='http://127.0.0.1:8000/index/videoUpload'
                 maxCount={1}
               >
                 <Button icon={<UploadOutlined />}>Click to Upload</Button>

@@ -10,6 +10,7 @@ import Login from '@/pages/Login/login.jsx'
 import NotFound from '@/pages/notFound/notFound.jsx'
 import Profile from '@/pages/profile/profile.jsx'
 import PersonalCenter from '@/pages/personalCenter/personalCenter.jsx'
+import PalyerPage from '@/pages/playpage/playPage.jsx'
 import './index.css'
 import { HashRouter,Route,Switch,Redirect } from 'react-router-dom'
 import store from '@/store/index'
@@ -33,6 +34,7 @@ ReactDOM.render(
           <Route exact path={'/profile'}> 
             <Profile></Profile>
           </Route>
+          <Route exact path={'/player'} component={PalyerPage} ></Route>
           {/* <Redirect from='/' to='/404'></Redirect> */}
           </Switch>
     </HashRouter>
