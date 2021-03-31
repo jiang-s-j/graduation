@@ -72,6 +72,22 @@ export const pushConcern = (data) => {
     data,
   })
 }
+// 修改用户信息
+export const userInformtionMdify = (data) => {
+  return Require({
+    url: '/index/userInformationModify',
+    method: 'post',
+    data,
+  })
+}
+// 查询用户信息
+export const queryUserInfo = () => {
+  return Require({
+    url: '/index/queryUserInfo',
+    method: 'post',
+  })
+}
+
 
 
 

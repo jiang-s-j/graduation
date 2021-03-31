@@ -160,7 +160,7 @@ class Hot extends Component {
                   }
                 >
                   <Card.Meta
-                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                    avatar={<Avatar src={item.avatar ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
                     title={item.name}
                     description={item.descript}
                   />
@@ -184,7 +184,7 @@ class Hot extends Component {
                   }
                 >
                   <Card.Meta
-                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                    avatar={<Avatar src={item.avatar ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
                     title={item.name}
                     description={item.descript}
                   />
@@ -209,7 +209,7 @@ class Hot extends Component {
                   }
                 >
                   <Card.Meta
-                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                    avatar={<Avatar src={item.avatar ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
                     title={item.name}
                     description={item.descript}
                   />

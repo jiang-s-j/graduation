@@ -22,7 +22,7 @@ ReactDOM.render(
           <PrivateRoute path={'/index'}>
             <Index></Index>
           </PrivateRoute>
-          <Route exact path={'/personal'}>
+          <Route path={'/personal'}>
             <PersonalCenter></PersonalCenter>
           </Route>
           {/* <Route  path={'/index'} component={Index}></Route> */}

@@ -35,7 +35,7 @@ class Index extends Component{
   }
   // 跳转创作中心
   creativeCenter = () => {
-    this.props.history.push('')
+    this.props.history.push('/personal/profile')
   }
 
   render(){

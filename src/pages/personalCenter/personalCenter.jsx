@@ -10,6 +10,7 @@ import {
 import { Route, Switch,withRouter} from 'react-router-dom'
 import HeaderBar from '@/components/HeaderBar/index.jsx'
 import Profile from '@/pages/profile/profile.jsx'
+import PersonalInformation from '@/pages/personalinformation/personalinformation.jsx'
 
 
 const { Header, Sider, Content } = Layout;
@@ -25,12 +26,23 @@ class PersonalCenter extends React.Component {
     });
   };
 
+  menuSelect = (item) => {
+    console.log(item);
+    switch (item.key){
+      case "1":
+        this.props.history.push('/personal/informal')
+        break
+      case "2":
+        this.props.history.push('/personal/profile')
+    }
+  }
+
   render() {
     return (
       <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+        <Sider  trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onSelect={this.menuSelect}>
             <Menu.Item key="1" icon={<UserOutlined />}>
               个人信息
             </Menu.Item>
@@ -43,12 +55,6 @@ class PersonalCenter extends React.Component {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          {/* <Header className="site-layout-background" style={{ padding: 0, backgroundColor : '#FFF' }}>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: this.toggle,
-            })}
-          </Header> */}
           <HeaderBar collapsed={this.state.collapsed} change={this.toggle} ></HeaderBar>
           <Content
             className="site-layout-background"
@@ -59,9 +65,9 @@ class PersonalCenter extends React.Component {
             }}
           >
             <Switch>
+              <Route path={'/personal/informal'} component={PersonalInformation}></Route>
               <Route path={'/personal/profile'} component={Profile}></Route>
             </Switch>
-            
           </Content>
         </Layout>
       </Layout>

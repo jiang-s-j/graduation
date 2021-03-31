@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './profile.scss'
-import { Upload, Button, Modal, notification, Form, Input } from 'antd'
+import { Upload, Button, Modal, notification, Form, Input, Card } from 'antd'
 import { UploadOutlined } from '@ant-design/icons';
 import { uploadIndex, postVideo } from '@/api/index.js'
 
@@ -48,7 +48,7 @@ class Profile extends Component {
     const { imgSrc } = this.state
     const layout = {
       labelCol: {
-        span: 8,
+        span: 4,
       },
       wrapperCol: {
         span: 16,
@@ -70,56 +70,73 @@ class Profile extends Component {
 
         </div> */}
 
-        <Form {...layout} onFinish={this.postVideo} >
-          <Form.Item
-            name='title'
-            label="标题"
-            rules={[
-              {
-                required: true,
-                message: '请输入标题',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            name='descript'
-            label="简介"
-            rules={[
-              {
-                required: true,
-                message: '请输入简介'
-              },
-            ]}
-          >
-            <Input.TextArea />
-          </Form.Item>
-          <Form.Item
-            name='picture'
-            label='视频封面'
-            rules={[
-              {
-                required: true,
-                message: '请输入视频封面'
-              }
-            ]}
-          >
-            <Upload
-              name='img'
-              action='http://127.0.0.1:8000/index/upload'
-              onChange={this.fileChange}
-              maxCount={1}
+        <Card
+          style={{ marginTop: 16 }}
+          type="inner"
+          title="创作中心"
+        // extra={<a href="#">More</a>}
+        >
+          让创作改变世界，改变你我
+        </Card>
+
+        <Card
+          style={{ marginTop: 16 }}
+          type="inner"
+          title="上传视频"
+        >
+          <Form {...layout} onFinish={this.postVideo} style={{ backgroundColor: 'white', padding: '40px 0px',}}>
+            <Form.Item
+              name='title'
+              label="标题"
+              rules={[
+                {
+                  required: true,
+                  message: '请输入标题',
+                },
+              ]}
             >
-              <Button icon={<UploadOutlined />}>Click to Upload</Button>
-            </Upload>
-          </Form.Item>
-          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }} >
-            <Button type="primary" htmlType="submit">
-              提交
+              <Input />
+            </Form.Item>
+            <Form.Item
+              name='descript'
+              label="简介"
+              rules={[
+                {
+                  required: true,
+                  message: '请输入简介'
+                },
+              ]}
+            >
+              <Input.TextArea />
+            </Form.Item>
+            <Form.Item
+              name='picture'
+              label='视频封面'
+              rules={[
+                {
+                  required: true,
+                  message: '请输入视频封面'
+                }
+              ]}
+            >
+              <Upload
+                name='img'
+                action='http://127.0.0.1:8000/index/upload'
+                onChange={this.fileChange}
+                maxCount={1}
+              >
+                <Button icon={<UploadOutlined />}>Click to Upload</Button>
+              </Upload>
+            </Form.Item>
+            <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }} >
+              <Button type="primary" htmlType="submit">
+                提交
             </Button>
-          </Form.Item>
-        </Form>
+            </Form.Item>
+          </Form>
+        </Card>
+
+
       </>
     )
   }
