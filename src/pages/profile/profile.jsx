@@ -30,12 +30,13 @@ class Profile extends Component {
   }
 
   // 发布视频
-  postVideo = (value) => {
+  onchangePostVideo = (value) => {
     console.log(value);
     postVideo({
       title: value.title,
       descript: value.descript,
       picture: this.state.imgSrc,
+      video:value.video.fileList[0].response.data,
     }).then(
       res => {
 
@@ -84,7 +85,7 @@ class Profile extends Component {
           type="inner"
           title="上传视频"
         >
-          <Form {...layout} onFinish={this.postVideo} style={{ backgroundColor: 'white', padding: '40px 0px', }}>
+          <Form {...layout} onFinish={this.onchangePostVideo} style={{ backgroundColor: 'white', padding: '40px 0px', }}>
             <Form.Item
               name='title'
               label="标题"

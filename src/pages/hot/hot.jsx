@@ -117,10 +117,12 @@ class Hot extends Component {
 
     }
   }
-  // 点击tab事件
-  handelTab = (e) => {
-    console.log(e.currentTarget.getAttribute('data-contentid'));
-
+  // 首页跳转到playerPage
+  indexTOplayer = (value) =>{
+    return () => {
+      this.props.history.push({pathname:'/index/player',state:{contentId: value}})
+      console.log(value);
+    }
   }
 
   render() {
@@ -158,6 +160,7 @@ class Hot extends Component {
                       src={item.img}
                     />
                   }
+                  onClick={this.indexTOplayer(item.content_id)}
                 >
                   <Card.Meta
                     avatar={<Avatar src={item.avatar ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
@@ -182,6 +185,7 @@ class Hot extends Component {
                       src={item.img}
                     />
                   }
+                  onClick={this.indexTOplayer(item.content_id)}
                 >
                   <Card.Meta
                     avatar={<Avatar src={item.avatar ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}
@@ -207,6 +211,7 @@ class Hot extends Component {
                       src={item.img}
                     />
                   }
+                  onClick={this.indexTOplayer(item.content_id)}
                 >
                   <Card.Meta
                     avatar={<Avatar src={item.avatar ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'} />}

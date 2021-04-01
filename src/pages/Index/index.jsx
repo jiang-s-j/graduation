@@ -11,6 +11,7 @@ import * as ACTCreator from '@/store/actionCreates'
 import Recommend from '@/pages/recommend/recommend.jsx'
 import Follow from '@/pages/follow/follow.jsx'
 import Hot from '@/pages/hot/hot.jsx'
+import Player from '@/pages/playpage/playPage.jsx'
 
 // 引入图片
 import arrow from '@/asset/imgs/arrow.png'
@@ -55,6 +56,7 @@ class Index extends Component{
                   <Route path={'/index/recommend'} component={Recommend}></Route>
                   <Route path={'/index/follow'} component={Follow}></Route>
                   <Route path={'/index/hot'} component={Hot}></Route>
+                  <Route path={'/index/player'} component={Player} ></Route>
                 </Switch>
                 </div>
                 

@@ -34,7 +34,7 @@ ReactDOM.render(
           <Route exact path={'/profile'}> 
             <Profile></Profile>
           </Route>
-          <Route exact path={'/player'} component={PalyerPage} ></Route>
+          {/* <Route exact path={'/player'} component={PalyerPage} ></Route> */}
           {/* <Redirect from='/' to='/404'></Redirect> */}
           </Switch>
     </HashRouter>
