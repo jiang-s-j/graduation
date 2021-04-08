@@ -88,6 +88,42 @@ export const queryUserInfo = () => {
   })
 }
 
+// 视频页 查询视频信息
+export const queryContentInfo = (data) => {
+  return Require({
+    url: '/index/queryVideoInfo',
+    method: 'post',
+    data,
+  })
+}
+
+// 给视频点赞
+export const contentLikes = (data) => {
+  return  Require({
+    url : '/index/contentLike',
+    method : 'post',
+    data,
+  })
+}
+
+// 给视频取消点赞
+export const cancelLikes = (data) => {
+  return Require({
+    url : '/index/cancelLike',
+    method : 'post',
+    data,
+  })
+}
+
+// 查询视频是否点赞
+export const isLikequery = (data) => {
+  return Require({
+    url: '/index/isLike',
+    method : 'post',
+    data,
+  })
+}
+
 
 
 
