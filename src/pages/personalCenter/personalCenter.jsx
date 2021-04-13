@@ -11,6 +11,7 @@ import { Route, Switch,withRouter} from 'react-router-dom'
 import HeaderBar from '@/components/HeaderBar/index.jsx'
 import Profile from '@/pages/profile/profile.jsx'
 import PersonalInformation from '@/pages/personalinformation/personalinformation.jsx'
+import DataShow from '@/pages/dataShow/dataShow.jsx'
 
 
 const { Header, Sider, Content } = Layout;
@@ -34,6 +35,10 @@ class PersonalCenter extends React.Component {
         break
       case "2":
         this.props.history.push('/personal/profile')
+        break
+      case "3":
+        this.props.history.push('/personal/datashow')
+        break
     }
   }
 
@@ -50,7 +55,7 @@ class PersonalCenter extends React.Component {
               创作中心
             </Menu.Item>
             <Menu.Item key="3" icon={<UploadOutlined />}>
-              nav 3
+              数据分析
             </Menu.Item>
           </Menu>
         </Sider>
@@ -67,6 +72,7 @@ class PersonalCenter extends React.Component {
             <Switch>
               <Route path={'/personal/informal'} component={PersonalInformation}></Route>
               <Route path={'/personal/profile'} component={Profile}></Route>
+              <Route path={'/personal/datashow'} component={DataShow}></Route>
             </Switch>
           </Content>
         </Layout>

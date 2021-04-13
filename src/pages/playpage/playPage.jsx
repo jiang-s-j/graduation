@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './playPage.scss'
 import ReactPlayer from 'react-player'
 import vieo from '@/asset/imgs/1.flv'
-import { Card, Avatar } from 'antd';
+import { Card, Avatar,Input, Button } from 'antd';
 import { HeartTwoTone, EllipsisOutlined, CheckCircleTwoTone } from '@ant-design/icons';
 import {useLocation} from 'react-router-dom'
-import {queryContentInfo, contentLikes, cancelLikes, isLikequery} from '@/api/index.js'
+import {queryContentInfo, contentLikes, cancelLikes, isLikequery, queryComment, addComment} from '@/api/index.js'
+import Comment from '@/components/comment/comment.jsx'
 
 const { Meta } = Card;
 const PlayPage = (props) => {
@@ -13,12 +14,18 @@ const PlayPage = (props) => {
   const [iconColor,setIconColor] = useState('#A9A9A9')
   const [concerniconColor,setConcerniconColor] = useState('#A9A9A9')
 
-  const [contentId,setContentId] = useState('')
+  const [contentId,setContentId] = useState('') // 帖子ID
 
   const [contentInfo,setContentInfo] = useState({}) // 存储请求视频信息
 
   const [isLike,setIsLike] = useState(false) // 是否点赞
 
+  const [commentInfo,setCommentInfo] = useState([]) // 评论信息
+
+  const [userInfo,setUserInfo] = useState([]) // 用户信息
+
+  const [commentValue,setCommentValue] = useState('') // 用户评论信息
+ 
   const location = useLocation()
   // 首次加载
   useEffect(() => {
@@ -49,6 +56,20 @@ const PlayPage = (props) => {
         setIsLike(res.data)
       }
     })
+
+    queryComment({
+      comment_id: content_id
+    })
+    .then(
+      res => {
+        if(res.flag){
+          setCommentInfo(res.data)
+          setUserInfo(res.userInfo)
+        }
+      }
+    )
+
+
   },[])
 
   // 点赞
@@ -83,6 +104,26 @@ const PlayPage = (props) => {
     setConcerniconColor(color)
   }
 
+  // 改变评论 
+  const changeCommentValue = (e) => {
+    setCommentValue(e.target.value)
+  }
+
+  // 提交评论信息
+  const submitCommit = () => {
+    console.log('aaa');
+    addComment({
+      content: commentValue,
+      comment_id: contentId,
+    }).then(
+      res => {
+        if(res.flag){
+
+        }
+      }
+    )
+  }
+
   return (
     <>
       <div className='player'>
@@ -91,6 +132,7 @@ const PlayPage = (props) => {
           cover={
             <ReactPlayer
               url={contentInfo.video}
+              // url='http://127.0.0.1:8000/storage/topic/20210401/3fb5fec9ef546c888e8b493cb80f3bb6.flv'
               controls={true}
               width='100%'
               style={{ margin: '20px 0px' }}
@@ -112,14 +154,22 @@ const PlayPage = (props) => {
             description={contentInfo.descript}
           />
         </Card>
-        {/* <ReactPlayer
-          url={vieo}
-          controls={true}
-          width='100%'
-          style={{ margin: '20px 0px' }}
-        ></ReactPlayer> */}
-      </div>
+        <div className='comment'>
+         {commentInfo.map((item,index) => (
+          <Comment key={index} name={userInfo[index]?.name} avatar={userInfo[index]?.avatar} content={item.comment_content}>
+          </Comment>
+          ))
+        } 
+        </div>
 
+        <div className='addComment'>
+          <Avatar src={contentInfo.avatar ?? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'}></Avatar>
+          <div className='addCommentRight'>
+            <Input.TextArea size='large' value={commentValue} onChange={changeCommentValue}></Input.TextArea>
+            <Button type='primary' style={{marginTop: '2vh'}} onClick={submitCommit}>ADD COMMIT</Button>
+          </div>
+        </div>
+      </div>   
     </>
   )
 }

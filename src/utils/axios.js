@@ -3,7 +3,7 @@ import axios from 'axios'
 axios.defaults.withCredentials=true
 
 const Require = axios.create({
-  timeout:5000,
+  timeout:500000,
   headers:{
     'Access-Control-Allow-Origin': 'true',
     'Content-Type': 'application/json;charset=UTF-8'

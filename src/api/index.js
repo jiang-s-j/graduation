@@ -124,6 +124,32 @@ export const isLikequery = (data) => {
   })
 }
 
+// 关注用户
+export const concern = (data) => {
+  return Require({
+    url : '/index/concern',
+    method : 'post',
+    data
+  })
+}
+
+// 查询帖子信息
+export const queryComment = (data) => {
+  return Require({
+    url: '/index/queryComment',
+    method : 'post',
+    data
+  })
+}
+
+// 提交评论信息
+export const addComment = (data) => {
+  return Require({
+    url: '/index/addComment',
+    method : 'post',
+    data
+  })
+}
 
 
 

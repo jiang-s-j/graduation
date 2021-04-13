@@ -3,4 +3,22 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .comment{
+    margin-top: 2vh;
+    width: 100%;
+   background-color: #fff;
+  }
+  .addComment{
+    width: 50vw;
+    height: 10vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .addCommentRight{
+      width: 47.5vw;
+    }
+  }
 }
